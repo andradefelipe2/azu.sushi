@@ -1,0 +1,308 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azú Sushi Delivery | O Melhor de São Caetano do Sul</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#060e1a',
+                            dark: '#0c192c',
+                            blue: '#004282',
+                            azure: '#0066cc',
+                            cyan: '#38bdf8',
+                            gold: '#f59e0b',
+                            accent: '#ff6b35'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060e1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #004282;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0066cc;
+        }
+        
+        .glass-panel {
+            background: rgba(12, 25, 44, 0.85);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: linear-gradient(145deg, rgba(0, 66, 130, 0.25) 0%, rgba(12, 25, 44, 0.9) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.18);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.45);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -10px rgba(0, 66, 130, 0.4);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .azure-gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #0066cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* SVG Logo styling matching Instagram profile */
+        .azu-logo-svg {
+            filter: drop-shadow(0 2px 6px rgba(56, 189, 248, 0.3));
+        }
+    </style>
+</head>
+<body class="bg-brand-navy text-slate-100 font-sans antialiased selection:bg-brand-azure selection:text-white flex flex-col min-h-screen">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-blue via-brand-azure to-brand-blue text-xs sm:text-sm font-medium py-2 px-4 text-center text-white flex items-center justify-center gap-2 shadow-md">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Aberto de Terça a Domingo das 18h às 23h • Delivery em São Caetano do Sul</span>
+    </div>
+
+    <!-- Notice Banner (Clarification about sample images & values) -->
+    <div class="bg-amber-500/10 border-b border-amber-500/30 text-amber-300 text-xs py-2 px-4 text-center flex items-center justify-center gap-2">
+        <i data-lucide="info" class="w-4 h-4 shrink-0 text-amber-400"></i>
+        <span><strong>Modelo Demonstrativo:</strong> Fotos, itens e valores expostos são ilustrativos para apresentação do layout e podem ser rapidamente atualizados com o cardápio oficial do Azú Sushi.</span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 glass-panel border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Official Brand Logo Container -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full bg-[#0d223a] border-2 border-[#38bdf8]/40 p-1 flex items-center justify-center shadow-lg shadow-brand-blue/30 group-hover:scale-105 transition-transform">
+                    <!-- SVG vector recreating exact profile logotype (Azú written in stylized calligraphic brush script) -->
+                    <svg viewBox="0 0 100 100" class="w-full h-full azu-logo-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="48" fill="#0c192c" />
+                        <!-- Stylized Japanese Calligraphy 'Azú' -->
+                        <path d="M 28 58 C 32 42, 45 32, 60 30 C 50 48, 38 65, 26 72 C 34 68, 55 60, 72 56 C 68 62, 58 70, 48 76" stroke="#52b2f6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M 38 36 C 42 26, 62 24, 76 32 C 68 38, 52 42, 40 46" stroke="#7ed2ff" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M 68 26 L 76 20" stroke="#7ed2ff" stroke-width="3" stroke-linecap="round"/>
+                        <!-- Small Japanese seal accent -->
+                        <text x="68" y="74" fill="#52b2f6" font-size="9" font-family="sans-serif" font-weight="bold" opacity="0.8">AZÚ</text>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="font-serif font-bold text-xl tracking-wider text-white group-hover:text-brand-cyan transition-colors">AZÚ SUSHI</h1>
+                    <p class="text-[10px] text-brand-cyan uppercase tracking-widest font-semibold">Delivery Premium</p>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#cardapio" class="hover:text-brand-cyan transition-colors">Cardápio</a>
+                <a href="#diferenciais" class="hover:text-brand-cyan transition-colors">Diferenciais</a>
+                <a href="#avaliacoes" class="hover:text-brand-cyan transition-colors">Avaliações</a>
+                <a href="#localizacao" class="hover:text-brand-cyan transition-colors">Localização</a>
+            </nav>
+
+            <!-- Header Action Buttons -->
+            <div class="flex items-center gap-3">
+                <a href="https://www.ifood.com.br" target="_blank" rel="noopener noreferrer" 
+                   class="hidden sm:flex items-center gap-2 bg-red-600/90 hover:bg-red-600 text-white px-4 py-2 rounded-full text-xs font-bold transition-all shadow-lg hover:shadow-red-600/30">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                    <span>Peça no iFood</span>
+                </a>
+
+                <button id="cart-toggle-btn" onclick="toggleCartModal()" class="relative bg-brand-dark border border-brand-blue hover:border-brand-cyan p-2.5 rounded-full text-white transition-colors">
+                    <i data-lucide="shopping-cart" class="w-5 h-5 text-brand-cyan"></i>
+                    <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-brand-accent text-white font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-navy">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+        <!-- Hero Section -->
+        <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+            <!-- Decorative Glow Backgrounds -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-azure/20 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-0 right-10 w-80 h-80 bg-brand-cyan/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Text -->
+                    <div class="lg:col-span-7 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-blue/30 border border-brand-cyan/30 text-brand-cyan text-xs font-semibold mb-6">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                            <span>O Melhor e Mais Completo Delivery de São Caetano</span>
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-6">
+                            A verdadeira arte do sushi <br class="hidden sm:inline"/>
+                            <span class="azure-gradient-text">no conforto da sua casa.</span>
+                        </h1>
+                        <p class="text-base sm:text-lg text-slate-300 mb-8 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Combinados exclusivos, peixes selecionados e receitas preparadas na hora com o máximo frescor e cuidado em cada detalhe.
+                        </p>
+
+                        <!-- CTA Action Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#cardapio" class="w-full sm:w-auto bg-gradient-to-r from-brand-azure to-brand-blue hover:from-blue-600 hover:to-brand-azure text-white px-8 py-4 rounded-2xl font-bold text-center shadow-lg shadow-brand-blue/30 hover:shadow-brand-azure/40 transition-all flex items-center justify-center gap-3">
+                                <span>Ver Cardápio Demonstrativo</span>
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://wa.me/5511978309851?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto glass-panel hover:bg-white/10 text-emerald-400 border-emerald-500/30 hover:border-emerald-500/60 px-6 py-4 rounded-2xl font-semibold text-center transition-all flex items-center justify-center gap-2">
+                                <!-- Official WhatsApp SVG Logo -->
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                                </svg>
+                                <span>Pedir via WhatsApp</span>
+                            </a>
+                        </div>
+
+                        <!-- Store Status & Specs -->
+                        <div class="mt-10 pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center lg:text-left">
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Seguidores</p>
+                                <p class="text-lg font-bold text-white flex items-center justify-center lg:justify-start gap-1 mt-0.5">
+                                    <span class="gold-gradient-text">15,3 mil</span>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Atendimento</p>
+                                <p class="text-lg font-bold text-white mt-0.5">Ter a Dom (18h-23h)</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Endereço</p>
+                                <p class="text-lg font-bold text-white mt-0.5 truncate">S. Caetano do Sul</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Banner Image Showcase -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative rounded-3xl overflow-hidden border border-white/15 p-2 bg-gradient-to-b from-white/10 to-transparent shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?q=80&w=1000&auto=format&fit=crop" 
+                                 alt="Combos de Sushi Azú" 
+                                 class="w-full h-[380px] sm:h-[460px] object-cover rounded-2xl scale-100 hover:scale-105 transition-transform duration-700">
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-6 left-6 right-6 glass-panel p-4 rounded-xl border border-white/20 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="p-2.5 bg-brand-azure/30 rounded-lg text-brand-cyan">
+                                        <i data-lucide="flame" class="w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-300">Sucesso de Vendas</p>
+                                        <p class="text-sm font-bold text-white">Hot Roll Crocante Especial</p>
+                                    </div>
+                                </div>
+                                <span class="text-brand-cyan font-bold text-xs bg-brand-navy/80 px-2.5 py-1 rounded-md border border-brand-cyan/20">Foto Ilustrativa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights Bar -->
+        <section id="diferenciais" class="py-8 bg-brand-dark border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="p-3">
+                        <i data-lucide="truck" class="w-6 h-6 text-brand-cyan mx-auto mb-2"></i>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider">Entrega Agilizada</h4>
+                        <p class="text-[11px] text-slate-400 mt-0.5">Embalagem especial de transporte</p>
+                    </div>
+                    <div class="p-3">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-brand-cyan mx-auto mb-2"></i>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider">Qualidade Premium</h4>
+                        <p class="text-[11px] text-slate-400 mt-0.5">Peixes frescos selecionados</p>
+                    </div>
+                    <div class="p-3">
+                        <i data-lucide="heart" class="w-6 h-6 text-brand-cyan mx-auto mb-2"></i>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider">Preparo Artesanal</h4>
+                        <p class="text-[11px] text-slate-400 mt-0.5">Sushimen experientes</p>
+                    </div>
+                    <div class="p-3">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-brand-cyan mx-auto mb-2"></i>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider">Retirada na Loja</h4>
+                        <p class="text-[11px] text-slate-400 mt-0.5">Rua Maranhão, 426</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="cardapio" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h2 class="text-xs font-bold text-brand-cyan tracking-widest uppercase mb-2">Nosso Cardápio</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Opções Demonstrativas</p>
+                <p class="text-slate-400 text-xs mt-3 bg-white/5 py-1.5 px-4 rounded-full inline-block border border-white/10">
+                    💡 <em>Valores e fotos abaixo são modelos. No site final do cliente, serão inseridos o cardápio e imagens reais.</em>
+                </p>
+            </div>
+
+            <!-- Filter Categories -->
+            <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
+                <button onclick="filterCategory('all')" class="category-btn active px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all bg-brand-azure text-white shadow-lg">
+                    Todos
+                </button>
+                <button onclick="filterCategory('combos')" class="category-btn px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all bg-brand-dark text-slate-300 hover:bg-brand-blue/40 border border-white/10">
+                    Combos
+                </button>
+                <button onclick="filterCategory('hotrolls')" class="category-btn px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all bg-brand-dark text-slate-300 hover:bg-brand-blue/40 border border-white/10">
+                    Hot Rolls
+                </button>
+                <button onclick="filterCategory('temakis')" class="category-btn px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all bg-brand-dark text-slate-300 hover:bg-brand-blue/40 border border-white/10">
+                    Temakis
+                </button>
+                <button onclick="filterCategory('especiais')" class="category-btn px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all bg-brand-dark text-slate-300 hover:bg-brand-blue/40 border border-white/10">
+                    Especiais & Sashimis
+                </button>
+            </div>
+
+            <!-- Menu Grid Container -->
+            <div id="menu-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamic Items Loaded via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Location & Operating Hours Section -->
+        <section id="localizacao" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5">
+                    <h2 class="text-xs font-bold text-brand-cyan tracking-widest uppercase mb-2">Localização & Contato</h2>
+ 
